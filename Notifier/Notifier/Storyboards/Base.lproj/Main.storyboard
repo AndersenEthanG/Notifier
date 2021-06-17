@@ -19,26 +19,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tNA-ae-g0q">
                                 <rect key="frame" x="64" y="136" width="286" height="360"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Notfication Test Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xTU-Vu-Jb3">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xTU-Vu-Jb3">
                                         <rect key="frame" x="0.0" y="0.0" width="286" height="59"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9g-lk-Uhe">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Body" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-7J-zjW">
                                         <rect key="frame" x="0.0" y="75" width="286" height="59.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9g-lk-Uhe">
+                                        <rect key="frame" x="0.0" y="150.5" width="286" height="59"/>
                                         <state key="normal" title="In App Notify"/>
                                         <connections>
                                             <action selector="inAppNotifyBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuz-vE-vPU"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Notfication Test Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-7J-zjW">
-                                        <rect key="frame" x="0.0" y="150.5" width="286" height="59"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxS-tP-mmY">
                                         <rect key="frame" x="0.0" y="225.5" width="286" height="59.5"/>
-                                        <state key="normal" title="Lock Screen Notify (Delay Timer)"/>
+                                        <state key="normal" title="Delay Timer Notify (App must be closed)"/>
                                         <connections>
                                             <action selector="timedNotifyBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MS4-fa-hQw"/>
                                         </connections>
@@ -66,8 +66,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="0hN-k5-AMx"/>
                     <connections>
-                        <outlet property="inAppNotfifyField" destination="xTU-Vu-Jb3" id="JAK-Ty-lzE"/>
-                        <outlet property="timedNotifyField" destination="bvx-7J-zjW" id="Qwm-Uj-ALc"/>
+                        <outlet property="bodyField" destination="bvx-7J-zjW" id="Qwm-Uj-ALc"/>
+                        <outlet property="titleField" destination="xTU-Vu-Jb3" id="JAK-Ty-lzE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
