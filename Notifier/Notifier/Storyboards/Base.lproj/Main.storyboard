@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TUT-P3-eNL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -15,13 +15,96 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tNA-ae-g0q">
+                                <rect key="frame" x="64" y="136" width="286" height="360"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Notfication Test Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xTU-Vu-Jb3">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="59"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9g-lk-Uhe">
+                                        <rect key="frame" x="0.0" y="75" width="286" height="59.5"/>
+                                        <state key="normal" title="In App Notify"/>
+                                        <connections>
+                                            <action selector="inAppNotifyBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuz-vE-vPU"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Notfication Test Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-7J-zjW">
+                                        <rect key="frame" x="0.0" y="150.5" width="286" height="59"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxS-tP-mmY">
+                                        <rect key="frame" x="0.0" y="225.5" width="286" height="59.5"/>
+                                        <state key="normal" title="Lock Screen Notify (Delay Timer)"/>
+                                        <connections>
+                                            <action selector="timedNotifyBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MS4-fa-hQw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIV-RE-Ecu">
+                                        <rect key="frame" x="0.0" y="301" width="286" height="59"/>
+                                        <state key="normal" title="Settings"/>
+                                        <connections>
+                                            <segue destination="pi2-vk-dW0" kind="show" id="iYW-tS-mfa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="qcv-OF-7Nb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tNA-ae-g0q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="5O2-hy-CTl"/>
+                            <constraint firstItem="tNA-ae-g0q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="faE-Eb-uhu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tNA-ae-g0q" secondAttribute="trailing" constant="64" id="q4t-JE-9Vk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0hN-k5-AMx"/>
+                    <connections>
+                        <outlet property="inAppNotfifyField" destination="xTU-Vu-Jb3" id="JAK-Ty-lzE"/>
+                        <outlet property="timedNotifyField" destination="bvx-7J-zjW" id="Qwm-Uj-ALc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="1874" y="266"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="y8b-vt-CJt">
+            <objects>
+                <viewController id="pi2-vk-dW0" customClass="SettingsViewController" customModule="Notifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CEj-qk-Akm" customClass="Sett">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="agb-wQ-HMb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bTA-vX-5Dh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJ9-q7-Ha8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2754" y="266"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PGE-dd-75c">
+            <objects>
+                <navigationController id="TUT-P3-eNL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VXh-cR-fPN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="J08-8i-Waj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1OZ-8L-BsP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949" y="266"/>
         </scene>
     </scenes>
     <resources>

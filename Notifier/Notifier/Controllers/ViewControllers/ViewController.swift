@@ -9,11 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var inAppNotfifyField: UITextField!
+    @IBOutlet weak var timedNotifyField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
-}
+    // MARK: - Functions
+    @IBAction func inAppNotifyBtn(_ sender: Any) {
+    
+    } // End of Function inAppNotify
+    
+    @IBAction func timedNotifyBtn(_ sender: Any) {
+    
+    } // End of Function timedNotifyBtn
+    
+    
+} // End of Class ViewController
 
